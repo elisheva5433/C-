@@ -1,0 +1,5 @@
+﻿  שב מלפני החגים.cpp
+C:\תיקיה מסלול\C++\שב מלפני החגים\Survivor.h(5,16): error C2011: 'Survivor': 'class' type redefinition
+C:\תיקיה מסלול\C++\שב מלפני החגים\Survivor.h(5,7): message : see declaration of 'Survivor'
+C:\תיקיה מסלול\C++\שב מלפני החגים\שב מלפני החגים.cpp(74,10): error C2086: 'char to_free[20]': redefinition
+C:\תיקיה מסלול\C++\שב מלפני החגים\שב מלפני החגים.cpp(70,10): message : see declaration of 'to_free'

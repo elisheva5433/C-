@@ -9,7 +9,7 @@ private:
 		SOUTH,
 		CENTRAL
 	};
-	char** sites;
+	char** sites=new char*[20];
 	int numOfBus;
 	int orders;
 	int wating;
@@ -45,6 +45,11 @@ public:
 	Trip()=default;
 	Trip(int id, enum area, char** sites, int numOfBus, int orders, int wating, int cost, int sumOfeXpenses, Date date);
 	Trip(const Trip& other);
-	
+	Trip(Trip&& other);
+	~Trip();
+
+	int numOfPass();
+
+	bool ifVisit(char site[10]);
 };
 

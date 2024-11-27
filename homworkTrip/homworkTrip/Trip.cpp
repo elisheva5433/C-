@@ -1,6 +1,8 @@
 #include "Trip.h"
 #include <stdio.h>
 #include <iostream>
+#include <stdlib.h>
+
 
 using namespace std;
 
@@ -76,6 +78,44 @@ Trip::Trip(int id, enum area, char** sites, int numOfBus, int orders, int wating
 	this->date;
 }
 
-Trip::trip(const Trip& other) {
+Trip::Trip(const Trip& other) {
+	id=other.id;
+	area = other.area;
+	sites=new char*[21];//not clear for me!!!
+	numOfBus=other.numOfBus;
+	orders=other.orders;
+	wating=other.wating;
+	cost=other.cost;
+	sumOfeXpenses=other.sumOfeXpenses;
+	date=other.date;
+}
 
+Trip::Trip(Trip&& other) {
+	id = other.id;
+	area = other.area;
+	sites =other.sites;
+	other.sites = nullptr;
+	numOfBus = other.numOfBus;
+	orders = other.orders;
+	wating = other.wating;
+	cost = other.cost;
+	sumOfeXpenses = other.sumOfeXpenses;
+	date = other.date;
+}
+
+Trip::~Trip() {
+	delete *sites;
+	delete sites;
+}
+
+int numOfPass() {
+	return 50* getNumOfBus();
+}
+
+bool ifVisit(char site[10]) {
+	for (int i = 0; i < 20; i++) {
+		if (getSites()[i] == site)
+			return true;
+	}
+	return false;
 }

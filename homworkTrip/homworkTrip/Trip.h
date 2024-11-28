@@ -9,7 +9,7 @@ private:
 		SOUTH,
 		CENTRAL
 	};
-	char** sites=new char*[20];
+	char** site;
 	int numOfBus;
 	int orders;
 	int wating;
@@ -49,7 +49,12 @@ public:
 	~Trip();
 
 	int numOfPass();
-
-	bool ifVisit(char site[10]);
+	bool ifVisit(char* site);
+	int numVisit();
+	int numAvailable();
+	void insertOrders(int numOrders);
+	void printDetails();
+	int earn();
+	void addBusToWaite(int raf);
 };
 
